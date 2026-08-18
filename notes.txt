@@ -1,0 +1,4 @@
+Today I studied Linear Regression and Gradient Descent.
+Linear Regression is used to predict continuous values.
+The learning rate controls the size of parameter updates.
+Tomorrow I will review Logistic Regression.

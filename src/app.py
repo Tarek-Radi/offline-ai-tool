@@ -1,0 +1,59 @@
+import argparse
+
+from summarizer import summarize_note
+
+
+def main() -> None:
+    # Create the CLI parser
+    parser = argparse.ArgumentParser(
+        description="Summarize a note using a local LLM through Ollama."
+    )
+
+    # Add the note file path argument
+    parser.add_argument(
+        "file_path",
+        type=str,
+        help="Path to the text file containing the note to summarize.",
+    )
+
+    # Parse CLI arguments
+    args = parser.parse_args()
+    file_path = args.file_path
+
+    # Read the note file
+    try:
+        with open(file_path, "r", encoding="utf-8") as file:
+            note = file.read()
+
+    except FileNotFoundError:
+        print(f"Error: The file '{file_path}' was not found.")
+        return
+
+    except PermissionError:
+        print(f"Error: Permission denied while reading '{file_path}'.")
+        return
+
+    except UnicodeDecodeError:
+        print(f"Error: Could not decode '{file_path}' as UTF-8.")
+        return
+
+    # Validate note content
+    if not note.strip():
+        print("Error: The note file is empty.")
+        return
+
+    # Generate the summary
+    try:
+        summary = summarize_note(note)
+
+    except RuntimeError as error:
+        print(f"Error: {error}")
+        return
+
+    # Display the result
+    print("\nSummary:\n")
+    print(summary)
+
+
+if __name__ == "__main__":
+    main()
