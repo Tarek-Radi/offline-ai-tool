@@ -1,0 +1,11 @@
+/no_think
+Summarize the following note.
+
+Rules:
+- Keep each bullet short.
+- Preserve the most important information.
+- Do not add information that is not present in the note.
+- Do not include an introduction or conclusion.
+
+Note:
+{note}
