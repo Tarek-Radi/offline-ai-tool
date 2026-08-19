@@ -1,3 +1,5 @@
+from urllib import response
+
 from ollama import chat, ResponseError
 
 
@@ -19,6 +21,11 @@ def generate_response(prompt: str) -> str:
                 "temperature": 0.2,
             },
         )
+        
+        print("Input tokens:", response.prompt_eval_count)
+        print("Output tokens:", response.eval_count)
+        print("Total duration:", response.total_duration)
+        print("Generation duration:", response.eval_duration)
 
         content = response.message.content
 

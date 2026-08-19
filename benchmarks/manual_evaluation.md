@@ -27,5 +27,12 @@ The summary omitted the testing owner and incomplete database migration.
 - Clarity: Good
 - Conciseness: Good
 
-Notes:
+## Notes:
 The model handled mixed Arabic and English well but omitted the planned study topics.
+
+- Model: qwen3:4b
+- Input tokens: 96
+- Generated tokens: 709
+- Generation time: 18.50 sec
+- Speed: ~38.3 tokens/sec
+- Observed issue: excessive hidden reasoning for simple summarization
