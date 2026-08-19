@@ -19,9 +19,18 @@ def main() -> None:
         help="Path to the text file containing the note to summarize.",
     )
 
+    # Add optional hosted inference flag
+    parser.add_argument(
+        "--hosted",
+        action="store_true",
+        help="Use the hosted inference backend instead of local Ollama.",
+    )
+
     # Parse CLI arguments
     args = parser.parse_args()
+
     file_path = args.file_path
+    use_hosted = args.hosted
 
     # Read the note file
     try:
@@ -55,9 +64,20 @@ def main() -> None:
         )
         return
 
-    # Generate the summary
+    # Model routing
     try:
-        summary = summarize_note(note)
+        summary = summarize_note(
+            note,
+            use_hosted=use_hosted,
+        )
+
+    except RuntimeError as error:
+        print(f"Error: {error}")
+        return
+
+    # Local inference
+    try:
+        summary = summarize_note(note, use_hosted=use_hosted)
 
     except RuntimeError as error:
         print(f"Error: {error}")
