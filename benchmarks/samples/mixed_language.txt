@@ -1,0 +1,5 @@
+ذاكرت النهارده Linear Regression و Gradient Descent.
+فهمت إن Linear Regression بيستخدم لتوقع continuous values.
+الـ learning rate بيحدد حجم كل update أثناء training.
+راجعت كمان الفرق بين overfitting و underfitting.
+بكرة هراجع Logistic Regression و Classification Metrics.

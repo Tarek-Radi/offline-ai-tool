@@ -1,12 +1,10 @@
-from urllib import response
-
 from ollama import chat, ResponseError
 
 
 MODEL_NAME = "qwen3:4b"
 
 
-def generate_response(prompt: str) -> str:
+def _call_ollama(prompt: str):
     try:
         response = chat(
             model=MODEL_NAME,
@@ -21,26 +19,31 @@ def generate_response(prompt: str) -> str:
                 "temperature": 0.2,
             },
         )
-        
-        print("Input tokens:", response.prompt_eval_count)
-        print("Output tokens:", response.eval_count)
-        print("Total duration:", response.total_duration)
-        print("Generation duration:", response.eval_duration)
 
-        content = response.message.content
-
-        if "</think>" in content:
-            content = content.split("</think>", 1)[1]
-
-        return content.strip()
+        return response
 
     except ResponseError as error:
-        raise RuntimeError(f"Ollama inference failed: {error}") from error
+        raise RuntimeError(
+            f"Ollama inference failed: {error}"
+        ) from error
 
     except ConnectionError as error:
         raise RuntimeError(
             "Could not connect to Ollama. Make sure Ollama is running."
         ) from error
+
+
+def generate_response(prompt: str) -> str:
+    response = _call_ollama(prompt)
+
+    content = response.message.content
+
+    if "</think>" in content:
+        content = content.split("</think>", 1)[1]
+
+    return content.strip()
+
+
 
 # if __name__ == "__main__":
 #     prompt = "Explain machine learning in one sentence."

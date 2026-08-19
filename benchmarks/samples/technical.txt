@@ -1,0 +1,6 @@
+Gradient descent is an optimization algorithm used to minimize a loss function.
+It updates model parameters in the opposite direction of the gradient.
+The learning rate controls the size of each parameter update.
+A very large learning rate can make training unstable.
+A very small learning rate can make training slow.
+Feature scaling can help gradient descent converge faster.

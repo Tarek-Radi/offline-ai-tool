@@ -1,0 +1,27 @@
+Machine learning systems learn patterns from data instead of requiring explicit rules for every possible situation.
+
+Supervised learning uses labeled examples, while unsupervised learning works with unlabeled data and tries to discover hidden patterns.
+
+Linear Regression is commonly used to predict continuous numerical values such as prices, temperatures, and sales.
+
+A loss function measures the difference between model predictions and actual values. Mean Squared Error is commonly used for regression problems.
+
+Gradient Descent is an optimization algorithm that updates model parameters to reduce the loss function.
+
+The learning rate determines the size of each update. A learning rate that is too large can make training unstable, while one that is too small can make training unnecessarily slow.
+
+Feature scaling can improve the behavior of Gradient Descent.
+
+Training data is used to learn model parameters. Validation data can be used for tuning, while test data is used to evaluate the final model.
+
+Overfitting occurs when a model performs well on training data but poorly on unseen data. Underfitting occurs when the model is too simple to capture important patterns.
+
+Regularization can help reduce overfitting.
+
+Logistic Regression is commonly used for classification problems.
+
+Classification models can be evaluated using metrics such as accuracy, precision, recall, and F1-score.
+
+The correct metric depends on the problem. For example, recall may be important when missing a positive case is costly.
+
+Data leakage happens when information unavailable at prediction time accidentally enters the training process, causing unrealistic evaluation results.

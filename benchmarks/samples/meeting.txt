@@ -1,0 +1,7 @@
+Meeting notes:
+- Finish API integration before Friday.
+- Ahmed will handle testing.
+- Database migration is still incomplete.
+- Main blocker: missing production credentials.
+- Documentation should be updated before deployment.
+- Next meeting is Monday morning.
