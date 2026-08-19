@@ -1,0 +1,49 @@
+Today I reviewed several machine learning concepts.
+
+Machine learning allows systems to learn patterns from data instead of being explicitly programmed for every task.
+
+Supervised learning uses labeled data, while unsupervised learning works with unlabeled data.
+
+Linear Regression is a supervised learning algorithm used to predict continuous values.
+
+Examples of continuous values include house prices, temperatures, salaries, and sales amounts.
+
+The Linear Regression model tries to find a relationship between input features and the target value.
+
+A loss function measures how different the model predictions are from the actual values.
+
+Mean Squared Error is commonly used as a loss function for regression problems.
+
+Gradient Descent is an optimization algorithm used to reduce the loss function.
+
+It updates model parameters step by step in the direction that reduces the error.
+
+The learning rate controls the size of each parameter update.
+
+If the learning rate is too large, training may become unstable.
+
+If the learning rate is too small, training may take a long time.
+
+Training continues until the model reaches an acceptable loss or another stopping condition.
+
+Feature scaling can help Gradient Descent converge faster.
+
+Model evaluation is important to understand how well the model performs on unseen data.
+
+Training data is used to learn model parameters.
+
+Validation data can be used during model development and tuning.
+
+Test data should be used to evaluate the final model.
+
+Overfitting happens when a model performs well on training data but poorly on unseen data.
+
+Underfitting happens when the model is too simple to capture important patterns.
+
+Regularization can help reduce overfitting.
+
+Tomorrow I plan to study Logistic Regression.
+
+Logistic Regression is mainly used for classification problems.
+
+I will also review classification metrics such as accuracy, precision, recall, and F1-score.

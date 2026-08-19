@@ -3,6 +3,9 @@ import argparse
 from summarizer import summarize_note
 
 
+MAX_NOTE_BYTES = 10000
+
+
 def main() -> None:
     # Create the CLI parser
     parser = argparse.ArgumentParser(
@@ -40,6 +43,16 @@ def main() -> None:
     # Validate note content
     if not note.strip():
         print("Error: The note file is empty.")
+        return
+
+    # Validate note size
+    note_size = len(note.encode("utf-8"))
+
+    if note_size > MAX_NOTE_BYTES:
+        print(
+            f"Error: Note is too large. "
+            f"Maximum supported size is {MAX_NOTE_BYTES} bytes."
+        )
         return
 
     # Generate the summary
